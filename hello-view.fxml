@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <TabPane layoutY="6.0" prefHeight="630.0" prefWidth="697.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Choose Character">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="566.0" prefWidth="695.0">
+                     <children>
+                        <Button fx:id="btnKnight" layoutX="60.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleKnight" text="Knight Class" />
+                        <Label fx:id="labelCharacter" layoutX="243.0" layoutY="150.0" prefHeight="103.0" prefWidth="371.0" textAlignment="CENTER">
+                           <font>
+                              <Font name="Impact" size="12.0" />
+                           </font></Label>
+                        <Button fx:id="btnArcher" layoutX="214.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleArcher" text="Archer Class" />
+                        <Button fx:id="btnBarbarian" layoutX="364.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleBarbarian" text="Barbarian Class" />
+                        <Button fx:id="btnWizard" layoutX="531.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleWizard" text="Wizard Class" />
+                        <ImageView fx:id="imgPic" fitHeight="113.0" fitWidth="191.0" layoutX="289.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="141.0" layoutY="34.0" text="Choose a class. You will not know your stats until you choose, so pick wisely." />
+                        <Button fx:id="btnResume" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleResume" text="Resume" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Stats">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="697.0">
+                     <children>
+                        <Button fx:id="btnHealth" layoutX="43.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleHealth" text="Get Health" />
+                        <Button fx:id="btnStrength" disable="true" layoutX="43.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleStrength" text="Get Strength" />
+                        <Button fx:id="btnArmor" disable="true" layoutX="43.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleArmor" text="Get Armor" />
+                        <ListView fx:id="listWeapon" disable="true" layoutX="43.0" layoutY="131.0" onMouseClicked="#handleWeapon" prefHeight="200.0" prefWidth="200.0" />
+                        <Label layoutX="44.0" layoutY="114.0" text="Weapons:" />
+                        <Label layoutX="306.0" layoutY="28.0" text="Character Details:">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelHealth" layoutX="306.0" layoutY="72.0" text="Health" />
+                        <Label fx:id="labelStrength" layoutX="306.0" layoutY="114.0" text="Strength" />
+                        <Label fx:id="labelWeapon" layoutX="306.0" layoutY="155.0" text="Weapon" />
+                        <Label fx:id="labelArmor" layoutX="309.0" layoutY="223.0" text="Armor" />
+                        <Label fx:id="labelNextPage" layoutX="307.0" layoutY="261.0" prefHeight="44.0" prefWidth="379.0" />
+                        <Label layoutX="306.0" layoutY="312.0" prefHeight="39.0" prefWidth="374.0" text="You will gain points in this battle that can be used for potions or to upgrade your character." textAlignment="CENTER" wrapText="true" />
+                        <Label fx:id="labelWeaponChoice" layoutX="307.0" layoutY="172.0" prefHeight="32.0" prefWidth="380.0" wrapText="true" />
+                        <Button fx:id="btnResumeStats" layoutX="143.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleResumeStats" text="Resumed stats" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Battle">
+              <content>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="582.0" prefWidth="697.0">
+                     <children>
+                        <ImageView fx:id="imgHero" fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="31.0" onMouseClicked="#handleHeroImage" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imgBoss" fitHeight="150.0" fitWidth="200.0" layoutX="467.0" layoutY="31.0" onMouseClicked="#handleBossImage" pickOnBounds="true" preserveRatio="true" />
+                        <ProgressBar fx:id="pBar" layoutX="467.0" layoutY="188.0" prefWidth="200.0" progress="0.0" />
+                        <Label fx:id="labelHeroHeader" layoutX="20.0" layoutY="14.0" text="Click on character image to get attacks" />
+                        <Label fx:id="labelBossStats" layoutX="467.0" layoutY="226.0" text="Boss Stats:">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnAttack1" disable="true" layoutX="23.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleAttack1" text="Button" />
+                        <Button fx:id="btnAttack2" disable="true" layoutX="23.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleAttack2" text="Button" />
+                        <Button fx:id="btnAttack3" disable="true" layoutX="23.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleAttack3" text="Button" />
+                        <Label fx:id="labelBossName" layoutX="467.0" layoutY="273.0" text="Label" />
+                        <Label fx:id="labelBossHealth" layoutX="467.0" layoutY="314.0" text="Label" />
+                        <Label fx:id="labelBossDamage" layoutX="467.0" layoutY="352.0" text="Label" />
+                        <ProgressBar fx:id="pBarHero" layoutX="23.0" layoutY="188.0" prefWidth="200.0" progress="0.0" />
+                        <Label fx:id="labelHeroBattleHealth" layoutX="23.0" layoutY="233.0" text="Health:" />
+                        <ImageView fx:id="imgDamagePotion" fitHeight="38.0" fitWidth="43.0" layoutX="40.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imgHealthPotion" fitHeight="41.0" fitWidth="45.0" layoutX="39.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnHealthPotion" disable="true" layoutX="17.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleHealthPotion" text="Health Potion" />
+                        <Button fx:id="btnDamagePotion" disable="true" layoutX="14.0" layoutY="543.0" mnemonicParsing="false" onAction="#handleDamagePotion" text="Damage Boost" />
+                        <Label fx:id="labelPoints" layoutX="277.0" layoutY="12.0" text="Your Points:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelAttackHit" layoutX="287.0" layoutY="117.0" />
+                        <Label fx:id="labelBossHeader" layoutX="467.0" layoutY="14.0" />
+                        <Label fx:id="labelAttack1Stats" layoutX="137.0" layoutY="273.0" text="Label" />
+                        <Label fx:id="labelAttack2Stats" layoutX="137.0" layoutY="314.0" text="Label" />
+                        <Label fx:id="labelAttack3Stats" layoutX="137.0" layoutY="352.0" text="Label" />
+                        <Label layoutX="25.0" layoutY="391.0" text="Shop:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
